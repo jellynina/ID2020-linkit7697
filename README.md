@@ -1,9 +1,9 @@
 # 建旭老師工業設計的機器人遊樂園
 *整理by ikea*
 
-## 作業小專案 - RGB燈
-
 # Linkit 7697基本語法與ＧＰＩＯ設定
+1. GPIO 預設腳位狀態 [文件](https://docs.labs.mediatek.com/resource/linkit7697-arduino/zh_tw/developer-guide/initial-pin-state-of-linkit-7697)
+
 
 ## 問題
 ```
@@ -11,12 +11,33 @@
 #define G_PIN A2    // P16
 #define B_PIN A1    // P15 
 ```
-GPIO腳位對照[表格](https://docs.labs.mediatek.com/resource/linkit7697-arduino/zh_tw/developer-guide/initial-pin-state-of-linkit-7697)，數字跟範例不一樣，目前嘗試將`A1`改成`58`仍可以使用
-> 不是16進位，A1 = 161
+1. GPIO腳位對照[表格](https://docs.labs.mediatek.com/resource/linkit7697-arduino/zh_tw/developer-guide/initial-pin-state-of-linkit-7697)，數字跟範例不一樣，目前嘗試將`A1`改成`58`仍可以使用
+  > 不是16進位，A1 = 161
 
 
 
 # LRemote基本語法
+```
+#include <LRemote.h> //呼叫LRemote Lib
+```
+
+
+
+
+## Controller 型態[文件](https://docs.labs.mediatek.com/resource/linkit7697-arduino/en/developer-guide/using-linkit-remote/lremote-control-classes)
+
+These control classes are provided to create UI controls to the canvas created by LRemote:
+- `LRemoteLabel`: a static text label
+- `LRemoteButton`: a rectangular button with a text label
+- `LRemoteCircleButton`: a round, circular button with a text label
+- `LRemoteSlider`: a slider with adjustable range and initial value
+- `LRemoteSwitch`: a on/off switch
+- `LRemoteJoystick`: an analog joystick control
+
+## Controller Methods:
+
+### `updateText()`
+
 
 ---
 
