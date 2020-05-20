@@ -22,7 +22,7 @@ GPIO腳位對照[表格](https://docs.labs.mediatek.com/resource/linkit7697-ardu
 
 #Things TO BE doen:
 
--[x] IDE使用 `VS code`
+- [x] IDE使用 `VS code`
   目前有 `偵測到 #include 錯誤。請更新您的 includePath。此編譯單位 (/Users/ikea/Documents/Arduino/sketch_rgb_linkit_7697/sketch_rgb_linkit_7697.ino) 的波浪線已停用。`
   也就是原本Arduino IDE可以讀到的Lib的路徑跟在`vs code`裡面的不一樣。
   **解**： 要把LinkIt路徑加入`includePath`中 在檔案 `c_cpp_properties.json` 參考[vs-code arduino issue](https://github.com/microsoft/vscode-arduino/issues/438)
@@ -30,5 +30,5 @@ GPIO腳位對照[表格](https://docs.labs.mediatek.com/resource/linkit7697-ardu
   /Users/USERNAME/Library/Arduino15/packages/LinkIt
   ```
 
-- [] 完成RGB slider作業
-- [] ＯＴＴＯ機器人實作研究
+- [ ] 完成RGB slider作業
+- [ ] ＯＴＴＯ機器人實作研究
