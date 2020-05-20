@@ -2,8 +2,8 @@
 
 #define R_PIN A3    // P17  why?
 #define G_PIN A2    // P16
-//#define B_PIN A1    // P15
-#define B_PIN 58
+#define B_PIN A1    // P15
+//#define B_PIN 58
 
 
 // Remote Elements
@@ -16,6 +16,7 @@ LRemoteSlider B_slider;
 LRemoteLabel LableRval;
 LRemoteLabel LableGval;
 LRemoteLabel LableBval;
+int maxVal = 255;
 //int r, g, b;
 //int r_dir = 1, g_dir = 1, b_dir = 1;
 void setup() {
@@ -46,7 +47,7 @@ void setup() {
   LableGval.setText("G Value");
   LableBval.setText("B Value");
   R_slider.setValueRange(0, 255, 0);
-  G_slider.setValueRange(0, 255, 255);
+  G_slider.setValueRange(0, 255, 0);
   B_slider.setValueRange(0, 255, 0);
 
   R_slider.setText("RED");
@@ -74,7 +75,8 @@ void setup() {
   pinMode(R_PIN, OUTPUT);
   pinMode(G_PIN, OUTPUT);
   pinMode(B_PIN, OUTPUT);
- 
+  
+  
 
 }
 
@@ -82,6 +84,7 @@ void loop() {
   
   if(!LRemote.connected()){
     Serial.println("waiting for connection");
+    rgbInit(0,0,0);
     delay(1000);
   }else{
     delay(500);
@@ -90,7 +93,11 @@ void loop() {
   
   if(R_slider.isValueChanged() || G_slider.isValueChanged() || B_slider.isValueChanged()){
     Serial.println("slider value is changed");
+    rgbInit(R_slider.getValue(), G_slider.getValue() ,B_slider.getValue());
+    //Serial.print("Red Value: ");
+    //Serial.println(analogRead(R_PIN));
     delay(500);
+
   }
 
 }
@@ -98,7 +105,11 @@ void loop() {
 
 
 int rgbInit( int x , int y, int z){
-  analogWrite(R_PIN, x);
-  analogWrite(G_PIN, y);
-  analogWrite(B_PIN, z);
+  int valR = maxVal - x ;
+  int valG = maxVal - y ;
+  int valB = maxVal - z ;
+  
+  analogWrite(R_PIN, valR);
+  analogWrite(G_PIN, valG);
+  analogWrite(B_PIN, valB);
 }
