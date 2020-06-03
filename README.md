@@ -1,8 +1,20 @@
 # 建旭老師工業設計的機器人遊樂園
 *整理by ikea*
 
+1. Linkit 7697
+2. Robot Shield
+3. Linkit remote
+
+# 環境安裝
+
+1. Arduino IDE, 並且新增以下URL增加對 **7697** 的支援 [setup 文件](https://docs.labs.mediatek.com/resource/linkit7697-arduino/zh_tw/environment-setup)
+```
+http://download.labs.mediatek.com/package_mtk_linkit_7697_index.json
+```
+
+
 # Linkit 7697基本語法與ＧＰＩＯ設定
-1. GPIO 預設腳位狀態 [文件](https://docs.labs.mediatek.com/resource/linkit7697-arduino/zh_tw/developer-guide/initial-pin-state-of-linkit-7697)
+GPIO 預設腳位狀態 [文件](https://docs.labs.mediatek.com/resource/linkit7697-arduino/zh_tw/developer-guide/initial-pin-state-of-linkit-7697)
 
 
 ## 問題
@@ -51,5 +63,6 @@ These control classes are provided to create UI controls to the canvas created b
   /Users/USERNAME/Library/Arduino15/packages/LinkIt
   ```
 
-- [ ] 完成RGB slider作業
+- [x] 完成RGB slider作業
+  因為元件是 **共陽** 所以RGB數值是反的。
 - [ ] ＯＴＴＯ機器人實作研究
